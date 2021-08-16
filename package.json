@@ -1,0 +1,71 @@
+{
+  "name": "hacker-news",
+  "version": "0.0.0",
+  "description": "Web app that consumes the Hacker News' API",
+  "main": "src/index.tsx",
+  "scripts": {
+    "dev": "webpack serve --open",
+    "build": "webpack build --mode production",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WS-Jedp/hacker-news.git"
+  },
+  "keywords": [
+    "React",
+    "TypeScript",
+    "Framer-motion",
+    "API",
+    "CSS"
+  ],
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.config.js"
+    ]
+  }, 
+  "author": "Juanes <jedp082@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WS-Jedp/hacker-news/issues"
+  },
+  "homepage": "https://github.com/WS-Jedp/hacker-news#readme",
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babel/runtime": "^7.15.3",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.0.0",
+    "@types/jest": "^27.0.1",
+    "@types/react": "^17.0.18",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-router-dom": "^5.1.8",
+    "autoprefixer": "^10.3.1",
+    "babel-jest": "^27.0.6",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.2.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
+    "mini-css-extract-plugin": "^2.2.0",
+    "postcss": "^8.3.6",
+    "postcss-loader": "^6.1.1",
+    "resolve-url-loader": "^4.0.0",
+    "style-loader": "^3.2.1",
+    "ts-jest": "^27.0.4",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "webpack": "^5.50.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "framer-motion": "^4.1.17",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0"
+  }
+}

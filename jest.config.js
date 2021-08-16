@@ -11,6 +11,6 @@ module.exports = {
         "/node_modules/"
     ],
     moduleNameMapper: {
-        "\\.(scss|sass|jpg|png|svg|jpeg|mp4)$": "<rootDir>/src/__tests__/mocks/filesMocks.js"
-      }
+        "\\.(css|jpg|png|svg|jpeg|mp4)$": "<rootDir>/src/__tests__/mocks/filesMocks.js"
+    }
 }

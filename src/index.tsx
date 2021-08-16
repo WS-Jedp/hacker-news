@@ -1,6 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-const App = () => (<div>Hello World!</div>)
+import { Router } from './routes'
 
-ReactDOM.render(<App />, window.document.getElementById('app'))
+import './styles/index.css'
+
+
+
+ReactDOM.render(<Router />, window.document.getElementById('app'))

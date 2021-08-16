@@ -1,0 +1,1 @@
+export type ICONS = "angular" | "react" | "vue"

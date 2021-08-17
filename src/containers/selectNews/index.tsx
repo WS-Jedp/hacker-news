@@ -26,8 +26,8 @@ export const SelectNewsContainer:React.FC<SelectNewsContainer> = ({ action, valu
                     onClick={(ev) => handleAction(ev, "angular")}
                 />
                 <Option 
-                    image="/public/images/react-logo/react-logo.jpg" 
-                    srcSet={"/public/images/react-logo/react-logo@2x.jpg 2x, /public/images/react-logo/react-logo@3x.jpg 3x"}
+                    image="/public/images/react-logo/react-logo.png" 
+                    srcSet={"/public/images/react-logo/react-logo@2x.png 2x, /public/images/react-logo/react-logo@3x.png 3x"}
                     text="React"
                     onClick={(ev) => handleAction(ev, "react")}
                 />

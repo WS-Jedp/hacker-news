@@ -52,6 +52,6 @@ a, p, b, small, strong, i {
 
 @media screen and (min-width: 1080px) {
     .container {
-        width: 72%;
+        width: 75%;
     }
 }

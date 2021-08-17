@@ -8,6 +8,8 @@ import { NewsCard } from '../../components/newsCard'
 
 import { ModalContainer } from '../../components/modals/container'
 
+import { Loader } from '../../components/commons/loader'
+
 export const Home:React.FC = () => {
 
     const [currentNews, setCurrentNews] = useState<string | null>(null)
@@ -26,6 +28,7 @@ export const Home:React.FC = () => {
                 onClick={() => setshow(true)}
                 onFav={() => console.log("In the Icon")}
             />
+            <Loader />
 
             {
                 show && <ModalContainer>

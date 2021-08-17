@@ -1,26 +1,20 @@
 import React, { useState } from 'react'
+
 import { Layout } from '../../layouts/default'
 import { SelectNewsContainer } from '../../containers/selectNews'
 
-import { ModalContent } from '../../components/modals/content'
-
 import { NewsCard } from '../../components/newsCard'
-
-import { ModalContainer } from '../../components/modals/container'
-
 import { Loader } from '../../components/commons/loader'
+import { ModalContainer } from '../../components/modals/container'
+import { ModalContent } from '../../components/modals/content'
 
 export const Home:React.FC = () => {
 
-    const [currentNews, setCurrentNews] = useState<string | null>(null)
     const [show, setshow] = useState<boolean>(false)
 
     return (
         <Layout>
-            <SelectNewsContainer 
-                action={(news) => setCurrentNews(news)}
-                value={currentNews}
-            />
+            <SelectNewsContainer />
             <NewsCard 
                 author="Juanes"
                 created_at="3 hours ago"

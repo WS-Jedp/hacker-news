@@ -20,6 +20,7 @@
     color: var(--color-gray);
     background-color: var(--color-white);
     cursor: pointer;
+    font-size: 1.4rem;
 
 }
 

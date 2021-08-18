@@ -4,10 +4,13 @@ import { News } from '../../dto/news'
 
 type InitialState = {
     currentNews: NEWS | undefined,
+    setCurrentNews: (news:NEWS) => void,
     favs: News[],
     addNewsToFavorites: (news:News) => void,
     removeNewsFromFavorites: (id: string) => void,
-    setCurrentNews: (news:NEWS) => void
+    dashboardNews: News[],
+    addNewsToDashboard: (news:News[]) => void,
+    setNewsToDashboard: (news:News[]) => void
 }
 
 const initialState:InitialState = {
@@ -15,7 +18,10 @@ const initialState:InitialState = {
     favs: [],
     addNewsToFavorites: () => {},
     removeNewsFromFavorites: () => {},
-    setCurrentNews: () => {}
+    setCurrentNews: () => {},
+    dashboardNews: [],
+    addNewsToDashboard: () => {},
+    setNewsToDashboard: () => {}
 }
 
 export const Context = createContext(initialState)
@@ -23,19 +29,24 @@ export const Context = createContext(initialState)
 export const ContextProvider:React.FC = ({ children }) => {
 
     const [currentNews, setCurrentNew] = useState<NEWS | undefined>()
+    const [dashboardNews, setDashboardNews] = useState<News[]>([])
     const [favorites, setFavorites] = useState<News[]>([])
     
     // Interactions with the global state
     const addNewsToFavorites = (news:News) => setFavorites((old) => ([...old, news]))
     const removeNewsFromFavorites = (id:string) => setFavorites(old => old.filter(news => news.objectId !== id)) 
     const setCurrentNews = (news:NEWS) => setCurrentNew(news)
+    const addNewsToDashboard = (news:News[]) => setDashboardNews(old => [...old, ...news])
 
     const initialState:InitialState = {
         currentNews,
         favs: favorites,
         addNewsToFavorites,
         removeNewsFromFavorites,
-        setCurrentNews
+        setCurrentNews,
+        dashboardNews,
+        addNewsToDashboard,
+        setNewsToDashboard: (news:News[]) => setDashboardNews(news)
     }
 
     return (

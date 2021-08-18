@@ -36,6 +36,12 @@ a, p, b, small, strong, i {
 }
 
 
+.link-to-story {
+    text-decoration: underline;
+    color: var(--color-blue);
+}
+
+
 /* Classes for containers */
 .container {
     width: 90%;

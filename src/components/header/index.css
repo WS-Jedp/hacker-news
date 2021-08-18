@@ -9,6 +9,7 @@
     height: 81px;
     box-shadow: 0 0 21px 0 rgba(0,0,0,.1);
     background-color: var(--color-white);
+    z-index: 81;
 }
 
 .header::before {

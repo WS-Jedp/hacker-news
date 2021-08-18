@@ -1,0 +1,28 @@
+.favorites-news {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: grid;
+    margin: 21px 0;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    grid-gap: 21px;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 42px;
+}
+
+.not-favorites {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+@media screen and (min-width: 1080px) {
+    .favorites-news {
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    }
+}

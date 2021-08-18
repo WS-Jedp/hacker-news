@@ -14,6 +14,6 @@ export default (options?:useFavCachedNews):News[] => {
         return options.toCached
     }
 
-    const news = useLocalStorage({ item: FAVS_ITEM }) as News[]
+    const news = useLocalStorage({ item: FAVS_ITEM }) as News[] || null
     return news || []
 }

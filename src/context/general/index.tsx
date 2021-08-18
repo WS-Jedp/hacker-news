@@ -11,7 +11,9 @@ type InitialState = {
     setFavs: (news:News[]) => void,
     dashboardNews: News[],
     addNewsToDashboard: (news:News[]) => void,
-    setNewsToDashboard: (news:News[]) => void
+    setNewsToDashboard: (news:News[]) => void,
+    newsDetail: News | undefined,
+    setNewsDetail: (news:News) => News
 }
 
 const initialState:InitialState = {
@@ -23,7 +25,9 @@ const initialState:InitialState = {
     setCurrentNews: () => {},
     dashboardNews: [],
     addNewsToDashboard: () => {},
-    setNewsToDashboard: () => {}
+    setNewsToDashboard: () => {},
+    newsDetail: undefined,
+    setNewsDetail: () => ({ author: "", created_at: "", created_at_i: 0, objectID: "", points: 0, story_title: "", story_url: { value: "" } })
 }
 
 export const Context = createContext(initialState)
@@ -33,6 +37,7 @@ export const ContextProvider:React.FC = ({ children }) => {
     const [currentNews, setCurrentNew] = useState<NEWS | undefined>()
     const [dashboardNews, setDashboardNews] = useState<News[]>([])
     const [favorites, setFavorites] = useState<News[]>([])
+    const [newsDetail, setNewsDetail] = useState<News|undefined>(undefined)
     
     // Interactions with the global state
     const addNewsToFavorites = (news:News) => setFavorites((old) => ([...old, news]))
@@ -46,6 +51,11 @@ export const ContextProvider:React.FC = ({ children }) => {
     const addNewsToDashboard = (news:News[]) => setDashboardNews(old => [...old, ...news])
     const setFavs = (news:News[]) => setFavorites(news)
 
+    const handleSetNewsDetail = (news:News) => {
+        setNewsDetail(news)
+        return news
+    }
+
 
     const initialState:InitialState = {
         currentNews,
@@ -56,7 +66,9 @@ export const ContextProvider:React.FC = ({ children }) => {
         setCurrentNews,
         dashboardNews,
         addNewsToDashboard,
-        setNewsToDashboard: (news:News[]) => setDashboardNews(news)
+        setNewsToDashboard: (news:News[]) => setDashboardNews(news),
+        newsDetail,
+        setNewsDetail: handleSetNewsDetail
     }
 
     return (

@@ -11,16 +11,22 @@ interface NewsCard {
     author: string,
     title: string,
     onClick: () => void,
-    onFav: () => void
+    onFav: () => void,
+    onUnfav: () => void,
 }
 
-export const NewsCard:React.FC<NewsCard> = ({ isFav = false, author, created_at, title, onClick, onFav }) => {
+export const NewsCard:React.FC<NewsCard> = ({ isFav = false, author, created_at, title, onClick, onFav, onUnfav }) => {
 
     const [isFavorite, setIsFavorite] = useState<boolean>(isFav)
 
     const handleFav = () => {
-        setIsFavorite(!isFavorite)
+        setIsFavorite(true)
         onFav()
+    }
+
+    const handleUnfav = () => {
+        setIsFavorite(false)
+        onUnfav()
     }
 
     return (
@@ -34,14 +40,14 @@ export const NewsCard:React.FC<NewsCard> = ({ isFav = false, author, created_at,
                 </small>
                 <strong className="news-card__text-title">
                     {
-                        shorterTitle(title)
+                        title ? shorterTitle(title) : "" 
                     }
                 </strong>
             </section>
             <figure aria-label="Is favorite icon" className="news-card__fav">
                 {
                     isFavorite ? (
-                        <img alt="Is the favorite" src="/public/images/icons/heart-full.svg" onClick={handleFav} />
+                        <img alt="Is the favorite" src="/public/images/icons/heart-full.svg" onClick={handleUnfav} />
                     ) : (
                         <img alt="Is not the favorite" src="/public/images/icons/heart-line.svg" onClick={handleFav} />
                     )

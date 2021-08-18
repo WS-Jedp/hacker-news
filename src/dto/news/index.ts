@@ -1,5 +1,5 @@
 export type News = {
-    objectId: string,
+    objectID: string,
     author: string,
     created_at: string,
     created_at_i: number,
@@ -7,5 +7,5 @@ export type News = {
     story_url: {
         value: string
     },
-    story_title: string
+    story_title: string,
 }

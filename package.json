@@ -1,6 +1,6 @@
 {
   "name": "hacker-news",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Web app that consumes the Hacker News' API",
   "main": "src/index.tsx",
   "scripts": {

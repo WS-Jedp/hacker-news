@@ -31,7 +31,7 @@ export const getAllNews = async (options:Options):Promise<Response> => {
 }
 
 export const getSpecificNews = async (options:NewsOptions):Promise<Response> => {
-    const data = await fetch(`${URL}query=${options.news}&page=${options.page || 0}`)
+    const data = await fetch(`${URL}query=${options.news}&page=${options.page || 0}&hitsPerPage=${options.hitsPerPage || 8}`)
     const resp = data.json()
     return resp as Promise<Response>
 }

@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import useCurrentCachedNews from '../../hooks/useCurrentCachedNews'
 
 import { getAllNews, getSpecificNews } from '../../services/news/get'
 
@@ -14,10 +16,12 @@ export const Home:React.FC = () => {
 
     const [show, setshow] = useState<boolean>(false)
 
+
     useEffect(() => {
         const getData = async () => {
             const data = await getSpecificNews({ page: 0, news: "react", hitsPerPage: 3 })
-            console.log(data.nbPages)
+            await useLocalStorage({ item: 'favs', value: data.hits })
+            const cache = useLocalStorage({ item: 'favs' })
         }
         getData()
     }, [])

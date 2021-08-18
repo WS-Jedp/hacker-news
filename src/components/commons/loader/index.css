@@ -1,0 +1,32 @@
+.loader {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader__square {
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-color: transparent;
+    border: 2px solid var(--color-gray);
+    box-shadow: 0 0 30px 0 rgba(129, 108, 247, 0.2);
+    animation: loader 1.6s  infinite;
+}
+
+.loader__square--first {
+    animation: loader 1.6s  infinite;
+}
+.loader__square--second {
+    animation: loader 1.6s  infinite alternate-reverse;
+}
+
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}

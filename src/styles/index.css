@@ -1,0 +1,63 @@
+:root {
+    --color-gray: #606060;
+    --color-black: #3b3b3b;
+    --color-blue: #1797ff;
+    --color-white: #fff;
+    font-size: 62.5%;
+    --font-sans: 'Roboto', sans-serif;
+    --font-serif: 'Baskervville', serif;
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* Fonts classes */
+.font-sans {
+    font-family: var(--font-sans);
+}
+.font-serif {
+    font-family: var(--font-serif);
+}
+
+
+/* Texts configurin defaults values */
+a {
+    color: var(--color-black);
+}
+a, p, b, small, strong, i {
+    font-size: 1.4rem;
+}
+
+
+.link-to-story {
+    text-decoration: underline;
+    color: var(--color-blue);
+}
+
+
+/* Classes for containers */
+.container {
+    width: 90%;
+    margin: auto;
+    padding: 21px 0;
+    max-width: 1440px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 81%;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .container {
+        width: 75%;
+    }
+}

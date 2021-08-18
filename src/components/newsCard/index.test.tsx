@@ -10,6 +10,7 @@ describe("Tests for the component <Option />", () => {
     const title = "title of the card"
     const action = jest.fn<MouseEventHandler, []>()
     const actionTwo = jest.fn<MouseEventHandler, []>()
+    const onUnfav = jest.fn<MouseEventHandler, []>()
 
     beforeEach(() => {
         render(
@@ -20,6 +21,7 @@ describe("Tests for the component <Option />", () => {
                 title={title}
                 onClick={action}
                 onFav={actionTwo}
+                onUnfav={onUnfav}
             />
         )
     })

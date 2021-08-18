@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+import { getAllNews, getSpecificNews } from '../../services/news/get'
 
 import { Layout } from '../../layouts/default'
 import { SelectNewsContainer } from '../../containers/selectNews'
@@ -11,6 +13,14 @@ import { ModalContent } from '../../components/modals/content'
 export const Home:React.FC = () => {
 
     const [show, setshow] = useState<boolean>(false)
+
+    useEffect(() => {
+        const getData = async () => {
+            const data = await getSpecificNews({ page: 0, news: "react", hitsPerPage: 3 })
+            console.log(data.nbPages)
+        }
+        getData()
+    }, [])
 
     return (
         <Layout>
